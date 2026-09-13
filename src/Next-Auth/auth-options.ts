@@ -1,4 +1,4 @@
-import page from "@/app/(auth)/login/page"
+
 import {NextAuthOptions} from "next-auth"
 import Credentials from "next-auth/providers/credentials"
 import {jwtDecode} from 'jwt-decode'
@@ -57,25 +57,16 @@ export const authOptions: NextAuthOptions={
     callbacks:{
               
         // call after authorzie
-      async jwt({token ,user}) {
-            // params has two object 
-            // token and user
-            // token --> object to next auth save in cookies
-            // user -->object return from params login
+async jwt({ token, user }) {
+  if (user) {
+    const currentUser = user as any
 
-           if(user){
-             console.log('params jwt token',token);
-             console.log('params jwt user',user);
-            //    token.id=user.id
-            //    token.routeToken=user.accessToken 
-            (token as any).id = (user as any).id
-           (token as any).routeToken = (user as any).accessToken
-              
-           } 
-           
-           return token
-           
-        },
+    ;(token as any).id = currentUser.id
+    ;(token as any).routeToken = currentUser.accessToken
+  }
+
+  return token
+},
 
 // session call with usesession() | getServerSession() | api/auth/session
    async session({ session, token }) {
