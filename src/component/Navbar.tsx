@@ -77,6 +77,7 @@ export default function Navbar() {
              <input type="text" placeholder='Search for products, brands and more...' 
              className=" border border-1 rounded-3xl w-120 placeholder:text-[#36415380] placeholder:text-sm focus:outline-0 py-2 ps-5" />
           </NavigationMenuItem>
+          
         <NavigationMenuItem className=' hidden  md:flex justify-between gap-5 items-center '>
         <Link  href="/">Home</Link>
         <Link  href="/cart">shop</Link>
@@ -89,14 +90,14 @@ export default function Navbar() {
           <span className=" absolute top-[-10px] right-[-13px] bg-[#FB2C36] w-5 text-xs text-[#FFFFFF]  h-5 rounded-full flex justify-center items-center">{countWishlist}</span>
        </Link>
       <div className="relative ">
-      <Link className=" text-[#6A7282]"  href="#"><FaCartShopping /></Link> 
+      <Link className=" text-[#6A7282]"  href="/cart"><FaCartShopping /></Link> 
        {numberOfCartItems > 0 && (
               <span className=" absolute top-[-16px] right-[-14px] flex justify-center items-center text-sm p-2 bg-[#16a34a] w-5 h-5 rounded-full text-[#dcfce7]">{numberOfCartItems}</span>
        )}
       </div>
         <Link className="text-[#6A7282] hidden md:block " href="#"><FaAddressCard /></Link>
 
-          <NavigationMenuItem className='md:hidden '>
+          {/* <NavigationMenuItem className='md:hidden '> */}
           <NavigationMenuTrigger className={ ` bg-[#16A34A] text-[#FFFFFF]`}><CiViewList size={20} /></NavigationMenuTrigger>
           <NavigationMenuContent className={` p-4 `}>
             <ul className="w-56 flex flex-col gap-3">
@@ -106,23 +107,24 @@ export default function Navbar() {
             </ul>
             <ul className="w-56 flex flex-col my-5 gap-2">
                <li className=" flex justify-between items-center">
-                 <Link href={`/wishlist`} className=" flex items-center gap-3">
+                 <Link href={`/wishlist`} className="  flex items-center gap-3">
                   <span className=" bg-[#FEF2F2] w-[36px] h-[36px] flex justify-center items-center rounded-full  text-[#FB2C36]"><CiHeart size={25} /> </span>
                   <span>wishlist</span>
                  </Link>
                  <span className=" bg-[#FB2C36] w-7 h-7 flex justify-center items-center rounded-full text-[#FFFFFF]">{countWishlist}</span>
                </li>
+        
+              {/* <li className=" bg-red-700  cursor-pointer flex items-center gap-7">
                <Link href={`/cart`}  className=" flex justify-between">
-                <div  className=" cursor-pointer flex items-center gap-7">
                   <span className=" text-[#16A34A] "><FaShoppingCart /></span>
                   <span>Cart</span>
-                </div>
-                <span className=" w-6 h-6 bg-[#16A34A] rounded-full flex items-center text-sm text-[#FFFFFF] justify-center">{numberOfCartItems}</span>
                </Link>
+                </li> */}
+                {/* <span className=" w-6 h-6 bg-[#16A34A] rounded-full flex items-center text-sm text-[#FFFFFF] justify-center">{numberOfCartItems}</span> */}
             
             </ul>
           </NavigationMenuContent>
-        </NavigationMenuItem>
+        {/* </NavigationMenuItem> */}
         </NavigationMenuItem>
 
    

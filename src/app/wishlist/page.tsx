@@ -67,6 +67,7 @@ useEffect(() => {
       <TableBody className=' '>
         {dataWishlist?.data.map((item) => (
           <TableRow key={item._id} className=' border border-1 border-[#F3F4F6] py-5 px-6' >
+           
               <TableCell className="font-medium flex  px-6 py-4 items-center gap-5">
              <Image src={item.imageCover} width={50} className=' w-15 h-15 rounded-[12px] ' height={20} alt={item.title}  />
                <div>

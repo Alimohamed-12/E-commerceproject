@@ -72,9 +72,11 @@ export default function page() {
 
   return (
     <div className=' w-11/12 mx-auto mt-5 flex flex-col gap-5'>
+
       <div className=" flex gap-3">
         <span className='text-[#6A7282] text-sm '>Home </span> <span className='text-[#6A7282] text-sm '>/</span> <span className='text-[#6A7282] text-sm '>Cart</span> <span className='text-[#6A7282] text-sm '>/</span> <span >Checkout</span>
       </div>
+
       <div className='flex justify-between items-center'>
         <div >
           <div className='flex gap-3 items-center'>
@@ -110,10 +112,10 @@ export default function page() {
                 <div>
                   <h4 className=' font-semibold text-[#101828] '>Sadat City</h4>
                   <p className=' font-medium text-sm text-[#4A5565]'>Sadat City</p>
-                  <p className=' flex items-center gap-3 mt-2 '>
-                    <div className=' flex items-center gap-1'> <span className=' text-[#6A7282] text-xs'><FaPhone /></span> <span className=' text-xs font-medium text-[#6A7282]'>01027392104</span></div>
-                    <div className=' flex items-center gap-1'> <span className=' text-[#6A7282] text-xs'><FaCity /></span> <span className=' text-xs font-medium text-[#6A7282]'>Sadat City</span></div>
-                  </p>
+                  <div className=' flex items-center gap-3 mt-2 '>
+                    <p className=' flex items-center gap-1'> <span className=' text-[#6A7282] text-xs'><FaPhone /></span> <span className=' text-xs font-medium text-[#6A7282]'>01027392104</span></p>
+                    <p className=' flex items-center gap-1'> <span className=' text-[#6A7282] text-xs'><FaCity /></span> <span className=' text-xs font-medium text-[#6A7282]'>Sadat City</span></p>
+                  </div>
                 </div>
 
               </div>
@@ -217,7 +219,7 @@ export default function page() {
                     <FieldLabel htmlFor="cash">
                       <Field orientation="horizontal">
                         <FieldContent className="flex gap-3">
-                          <FieldDescription className="flex items-center gap-3">
+                          <div className="flex items-center gap-3">
                             <span className="bg-[#F3F4F6] flex justify-center items-center p-3 rounded-[7px]">
                               <MdPayments />
                             </span>
@@ -231,7 +233,7 @@ export default function page() {
                                 Pay when your order arrives at your doorstep
                               </p>
                             </div>
-                          </FieldDescription>
+                          </div>
                         </FieldContent>
 
                         <RadioGroupItem value="cash" id="cash" />
@@ -242,7 +244,7 @@ export default function page() {
                     <FieldLabel htmlFor="visa">
                       <Field orientation="horizontal">
                         <FieldContent>
-                          <FieldDescription className="flex items-center gap-3">
+                          <div className="flex items-center gap-3">
                             <span className="bg-[#F3F4F6] flex justify-center items-center p-3 rounded-[7px]">
                               <MdPayments />
                             </span>
@@ -256,7 +258,7 @@ export default function page() {
                                 Secure payment with Credit/Debit Card via Stripe
                               </p>
                             </div>
-                          </FieldDescription>
+                          </div>
                         </FieldContent>
 
                         <RadioGroupItem value="visa" id="visa" />
